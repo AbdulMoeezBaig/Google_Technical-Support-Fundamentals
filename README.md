@@ -36,3 +36,34 @@ If the voltage appears to become insufficient to support the new frequency, incr
 If the computer freezes or crashes, it has either become completely unstable or the CPU is not getting enough voltage to support the overclocked frequency. Use the BIOS to return to the last stable frequency or increase the voltage in 0.01V increments until stable.
 
 If stable, reboot the computer before attempting the next increase. 
+
+# File Permissions CLI Windows
+ICACLS C:\Users\Qwiklab\Documents\important_document - View existing permissions  
+ICACLS C:\Users\Qwiklab\Documents\important_document /grant "Kara:(r)" - Grant Read  
+ICACLS C:\Users\Qwiklab\Documents\important_document /remove "Kara" - Remove all  
+# Linux Commands  
+cd ../qwiklab/documents  
+ls -l important_document  
+sudo chmod 700 important_document - change the permissions of "important_document" (from the previous step) so that the owner has execute permissions on top of their current permissions. To do this, you'll use the chmod command, with the argument 700. The two zeros keep everyone, but the owner, from having any permissions at all, and the seven grants all available permissions to the owner (including execute). Keep in mind that because the file is owned by "root" you'll need to use sudo:  
+sudo chmod u+x secret_folder/ - To add execute to the owner's permission, you can use the command below. (Note that "u" stands for "user" and "x" stands for "execute".)  
+sudo chmod o-r secret_folder/ - Finally, you can remove read permissions from everyone else using the command below ("o" stands for "other"):  
+sudo chmod g+w secret_folder/ - These can be done in either order; "g" stands for "group" (like "u" from before), and "w" and "r" stand for "write" and "read" respectively:  
+sudo chmod g-r secret_folder/ - These can be done in either order; "g" stands for "group" (like "u" from before), and "w" and "r" stand for "write" and "read" respectively:  
+ls -ld taco/ - view permissions  
+sudo chown cook /home/qwiklab/taco - make cook owner  
+sudo chmod u+x not_so_important_document , sudo chmod g+w not_so_important_document, - use chmod to change the permissions so that these criteria are met: The owner has all permissions ,, The group has read and write permissions. , Everyone has read permissions.  
+sudo chmod a+r not_so_important_document - give everyone else read permissions. You can use the "o+r" argument to add read permissions to people other than the owner or group, but you can also use "a+r". This adds read permission to everyone (owner, group, and other)  
+sudo chmod a+rwx public_document - For this file, you want everyone (owner, group, and anyone else) to have all permissions. You can add read, write, and execute permissions to everyone at once using this command:  
+
+$ ls /dev - Lists all devices in the /dev folder 
+
+$ lcpci - Lists devices installed on the PCI bus 
+
+$ lsusb - Lists devices installed on the USB bus
+
+$ lsscsi - Lists SCSI devices, such as hard drives
+
+$ lpstat -p - Lists all printers and whether they are enabled
+
+$ dmesg - Lists devices recognized by the kernel  
+
