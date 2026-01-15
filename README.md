@@ -67,3 +67,15 @@ $ lpstat -p - Lists all printers and whether they are enabled
 
 $ dmesg - Lists devices recognized by the kernel  
 
+
+## Linux Commands
+ls /var/log - View logs  
+sudo cat /var/log/syslog - sys logs  
+sudo du -a /home | sort -n -r | head -n 5 - top 5 largest files  
+sudo apt-get update  - update list  
+sudo apt-get upgrade  - upgrade apps  
+sudo apt install vlc - installs vlc  
+ps aux | grep totally - finds process with name totally  
+sudo kill [pid]  - kills process id #pid  
+sudo find / -iname "*super*"  - search for file directory containing username super  
+chmod 777 [file_name] - grant read write execution permissions for file  
