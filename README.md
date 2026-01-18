@@ -79,3 +79,18 @@ ps aux | grep totally - finds process with name totally
 sudo kill [pid]  - kills process id #pid  
 sudo find / -iname "*super*"  - search for file directory containing username super  
 chmod 777 [file_name] - grant read write execution permissions for file  
+
+## GPO's 
+- Outline of troubleshooting steps for GPO settings that are not being applied:
+- Check the GPO Scope.
+- Check Security Filtering.
+- Check Read and Apply permissions.
+- Check the Group Policy Delegation.
+- Enable/disable User or Computer configurations.
+- Check the GPO Policy Process Order (LSDOU).
+- Ensure target GPO to OU links are enabled.
+- Check if an upstream GPO is set to Enforced.
+- Check if the affected OU is set to Block Inheritance.
+- Check if loopback is enabled
+- Check MI or WMI filters.
+- Ensure your expectations for the GPO setting match its actual purpose.
